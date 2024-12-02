@@ -33,41 +33,22 @@ function LoginPage({ route, method }) {
     };
 
     return (
-        // <form  className="form-container">
-        //     <h1>{name}</h1>
-        //     <input
-        //         className="form-input"
-        //         type="text"
-        //         value={username}
-        //         onChange={(e) => setUsername(e.target.value)}
-        //         placeholder="Username"
-        //     />
-        //     <input
-        //         className="form-input"
-        //         type="password"
-        //         value={password}
-        //         onChange={(e) => setPassword(e.target.value)}
-        //         placeholder="Password"
-        //     />
-        //     {loading && <LoadingIndicator />}
-        //     <button className="form-button" type="submit">
-        //         {name}
-        //     </button>
-        // </form>
         <div class="container">
         <div class="login-card">
             <div class="logo">
                 <img src="https://www.bayer.com/themes/custom/bayer_cpa/logo.svg" width="80" alt="Bayer Healthcare Logo"/>
             </div>
             <h1>Login</h1>
-            <form>
-                <input type="email" placeholder="Email" required=""/>
-                <input type="password" placeholder="Password" required=""/>
-                <button class="btn" type="submit">Login</button>
+            <form class="loginform">
+                <input type="email" placeholder="Email" required="" value={username}
+                onChange={(e) => setUsername(e.target.value)}/>
+                <input type="password" placeholder="Password" required=""  value={password}
+                onChange={(e) => setPassword(e.target.value)}/>
+                <button class="btn" type="submit" onClick={(e) =>handleSubmit()}>Login</button>
             </form>
             <div class="links">
                 <a href="#">Forgot Password?</a>
-                <a href="#">New User? Register here</a>
+                <a href="#" >New User? Register here</a>
             </div>
         </div>
     </div>
