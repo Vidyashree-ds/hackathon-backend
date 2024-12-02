@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./components/user-login/Loginpage"
 import Register from "./components/user-login/Loginpage"
 import NotFound from "./components/user-login/NotFound"
+import Dashboard from "./components/LandingPage/Dashboard"
 
 
 function Logout() {
   localStorage.clear()
-  return <Navigate to="/login" />
+  return <Navigate to="/dashboard" />
 }
 
 function RegisterAndLogout() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
         <Route path="*" element={<NotFound />}></Route>
+        <Route path="/dashboard" element={<Dashboard method={"Dashboard"} />} />
       </Routes>
     </BrowserRouter>
   )
