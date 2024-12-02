@@ -2,7 +2,8 @@ import React,{ useState } from "react";
 import api from "../../api";
 import { useNavigate } from "react-router-dom";
 import { TOKEN } from "../../constants";
-import "../../styles/Form.css"
+import "../../styles/Form.css";
+
 
 
 function LoginPage({ route, method }) {
@@ -32,6 +33,8 @@ function LoginPage({ route, method }) {
         }
     };
 
+   
+
     return (
         <div class="container">
         <div class="login-card">
@@ -44,12 +47,12 @@ function LoginPage({ route, method }) {
                 onChange={(e) => setUsername(e.target.value)}/>
                 <input type="password" placeholder="Password" required=""  value={password}
                 onChange={(e) => setPassword(e.target.value)}/>
-                <button class="btn" type="submit" onClick={(e) =>handleSubmit()}>Login</button>
+                <button class="btn" type="submit" onClick={(e) =>handleSubmit()}>{method =="login"?"Login": "Register"}</button>
             </form>
-            <div class="links">
+           {method =="login" && (<div class="links">
                 <a href="#">Forgot Password?</a>
-                <a href="#" >New User? Register here</a>
-            </div>
+                <a href="/register"  >New User? Register here</a>
+            </div>)}
         </div>
     </div>
     );
