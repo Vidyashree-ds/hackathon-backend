@@ -35,7 +35,7 @@ function LoginPage({ route, method }) {
 
     return (
         <form onSubmit={handleSubmit} className="form-container">
-            <h1>{name}</h1>
+            <h1>Welcome {name}</h1>
             <input
                 className="form-input"
                 type="text"
