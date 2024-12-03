@@ -3,7 +3,7 @@ import api from "../../api";
 import { useNavigate } from "react-router-dom";
 import { TOKEN } from "../../constants";
 
-import "../../styles/Form.css";
+import "../../styles/Form.scss";
 import { validate as validateEmail } from 'email-validator';
 
 
